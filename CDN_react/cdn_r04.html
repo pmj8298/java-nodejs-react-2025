@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .login-box {
+        /* border: 1px solid black; */
+        border: none;
+        margin-top: 20px;
+        text-align: center;
+        padding: 30px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+        background-color: lightslategray;
+        border-radius: 10px;
+        height: 200px;
+        width: 300px;
+      }
+      .login-box h2 {
+        margin: 0 0 30px;
+        padding: 0;
+        color: #fff;
+        text-align: center;
+      }
+
+      .login-box .user-box {
+        position: relative;
+      }
+
+      .login-box .user-box input {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 1px solid #fff;
+        outline: none;
+        background: transparent;
+      }
+
+      .login-box .user-box label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        pointer-events: none;
+        transition: 0.5s;
+      }
+
+      .login-box .user-box input:focus ~ label,
+      .login-box .user-box input:valid ~ label {
+        top: -20px;
+        left: 0;
+        color: #03e9f4;
+        font-size: 12px;
+      }
+
+      .login-box form a {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        color: #03e9f4;
+        font-size: 16px;
+        text-decoration: none;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: 0.5s;
+        margin-top: 40px;
+        letter-spacing: 4px;
+      }
+    </style>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const App = () => {
+        const [clicked, setClicked] = React.useState(false);
+        const change = () => setClicked(!clicked); // 핸들러
+        return (
+          <>
+            <h1>True or False 값 설정</h1>
+            <h2>{clicked + ""}</h2>
+            <hr />
+            <button onClick={change}>
+              {clicked ? "클릭해서 true" : "false"}
+            </button>
+          </>
+        );
+      };
+      const App1 = () => {
+        const [clicked, setClicked] = React.useState(true);
+        const change = () => setClicked(!clicked); // 핸들러
+        return (
+          <>
+            <h1>True or False 값 설정</h1>
+            <h2>{clicked + ""}</h2>
+            <hr />
+            <button onClick={change}>
+              {clicked ? "클릭해서 false" : "true"}
+            </button>
+
+            {clicked && <Modal />}
+          </>
+        );
+      };
+
+      const Modal = () => {
+        return (
+          <>
+            <div className="login-box">
+              <h2>login</h2>
+              <form action="">
+                <div class="user-box">
+                  <input type="text" required />
+                  <label for="">Username</label>
+                </div>
+                <div className="user-box">
+                  <input type="text" required />
+                  <label for="">Password</label>
+                </div>
+              </form>
+            </div>
+          </>
+        );
+      };
+
+      ReactDOM.createRoot(document.getElementById("root")).render([
+        <App />,
+        <App1 />,
+      ]);
+    </script>
+  </body>
+</html>
