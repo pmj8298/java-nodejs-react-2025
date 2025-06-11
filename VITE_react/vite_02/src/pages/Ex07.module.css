@@ -1,0 +1,23 @@
+.ex07-div {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: lightyellow;
+    transition: 0.3s ease;
+}
+
+.ex07-div:hover {
+    transform: scale(0.8);
+    background-color: lightcoral;
+}
+
+.ex07-div~ul li {
+    background-color: darkorange;
+}
+
+.ex07ex07 {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: rgb(197, 240, 5);
+}
