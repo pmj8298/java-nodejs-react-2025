@@ -1,0 +1,23 @@
+.data-box {
+    display: flex;
+    justify-content: center;
+}
+
+.data-box table {
+    border-collapse: collapse;
+    margin: 30px;
+    width: 100%;
+}
+
+.data-box td,
+.data-box th {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 2px #666;
+    width: 16%;
+    background-color: rgb(156, 196, 209);
+    color: rgb(59, 59, 59);
+}
+
+.data-box input {
+    width: 50px;
+}
