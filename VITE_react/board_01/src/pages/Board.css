@@ -1,0 +1,140 @@
+/* 전역 기본 스타일 */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fb;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    align-items: flex-start;
+    /* padding: 2rem; */
+}
+
+/* 게시판 제목 */
+h2 {
+    padding-top: 2%;
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+}
+
+/* 왼쪽 사이드 메뉴 */
+aside {
+    width: 200px;
+    margin-right: 100px;
+    /* padding-right: 100px; */
+    padding: 0.5rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.list-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.list-group a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.list-group a:hover {
+    background-color: #edf9ff;
+    color: #000;
+}
+
+
+
+section a {
+    color: inherit;
+    text-decoration: none;
+}
+
+section a:hover {
+    text-decoration: underline;
+}
+
+
+.info-box {
+    margin: 0 auto;
+    padding: 0 2% 2% 2%;
+    width: 1300px;
+    max-width: none !important;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* 테이블 스타일 */
+.info-box table {
+    margin: 0 auto;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    width: 1000px;
+}
+
+.info-box table tr {
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table-num,
+.table-name {
+    border: 1px solid #ddd;
+    border-right: none;
+    width: 60px;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    font-weight: bold;
+    color: #555;
+}
+
+.table-title {
+    border: 1px solid #ddd;
+    width: calc(100% - 25%);
+    height: 5.5rem;
+    padding: 1rem;
+    text-align: left;
+    color: #222;
+    font-size: 1.05rem;
+    transition: background-color 0.2s ease;
+}
+
+.table-title:hover {
+    background-color: #f0f8ff;
+}
+
+/* 글쓰기 버튼 영역 */
+.button-container {
+    text-align: right;
+    margin-right: 10%;
+    margin-top: 20px;
+}
+
+.button-container input[type="button"] {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    background-color: #0d6efd;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.button-container input[type="button"]:hover {
+    background-color: #0b5ed7;
+}

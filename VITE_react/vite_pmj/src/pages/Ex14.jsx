@@ -1,6 +1,5 @@
 import { useState } from "react"
 import axios from 'axios'
-import "./Ex14.css";
 const url = "http://api.thecatapi.com/v1/images/search?limit=9"
 
 const Axi = () => {
@@ -10,7 +9,7 @@ const Axi = () => {
     // const [odata, setOdata] = useState([{ 'url': 'https://cdn2.thecatapi.com/images/3qe.jpg' }])
 
     const handleInput = e => {
-        setSdata(pre => ({ ...pre, [e.target.name]: e.target.value })) // 풀어헤쳐서 객체 업데이트 -> 풀어헤치지 않으면 리액트에서 감지를 못하니까 ...pre와 같은 옅은 복사가 필요
+        setSdata(pre => ({ ...pre, [e.target.name]: e.target.value }))
     }
     const sendPost = () => axios.post('./data', sdata).then((res) => console.log(res.data))
     const myApi = () => axios.get('/api').then(res => setMydata(res.data))
@@ -30,13 +29,13 @@ const Axi = () => {
             <div>
                 <button onClick={myApi}>내 서버에서 수신</button>
                 <div>내 서버에서 받은 값</div>
-                <div>{JSON.stringify(mydata)}</div>
+                <div>{mydata}</div>
             </div>
             <hr />
             <div>
                 <button onClick={catApi}>외부 서버에서 수신</button>
                 <div>외부 서버에서 받은 값</div>
-                {/* <div>{JSON.stringify(odata)}</div> */}
+                <div>{JSON.stringify(mydata)}</div>
                 {odata && odata.map((v, i) => {
                     return (
                         <>
