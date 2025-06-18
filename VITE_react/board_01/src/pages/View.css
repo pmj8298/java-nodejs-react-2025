@@ -1,0 +1,45 @@
+.container {
+    margin-top: 50px;
+}
+
+h1.text-center {
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    color: #333;
+    background-color: #fff;
+    min-height: 50px;
+    white-space: pre-wrap;
+}
+
+.form-group .form-control {
+    border: 1px solid #ccc;
+    background-color: #fdfdfd;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.form-group .form-control:focus {
+    border-color: #80bdff;
+    outline: 0;
+}
+
+button.btn {
+    min-width: 80px;
+}
+
+.btn+.btn {
+    margin-left: 10px;
+}

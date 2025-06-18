@@ -75,7 +75,6 @@ const Write = () => {
                 />
             </div>
 
-            {/* 버튼 타입을 submit으로 */}
             <button className="btn-primary" type="submit">
                 글 작성
             </button>
