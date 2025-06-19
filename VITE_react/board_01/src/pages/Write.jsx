@@ -17,7 +17,6 @@ const Write = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("handleSubmit 호출됨");
         try {
             const response = await fetch("http://localhost:8050/api/write", {
                 method: "POST",
@@ -28,7 +27,6 @@ const Write = () => {
             });
 
             const result = await response.text();
-            console.log("서버 응답:", result);
             if (result === "success") {
                 alert("글 작성 완료!");
                 navigate("/");
@@ -36,49 +34,65 @@ const Write = () => {
                 alert("글 작성 실패: " + result);
             }
         } catch (err) {
-            console.error("fetch 에러:", err);
             alert("글 작성 중 오류 발생: " + err.message);
         }
     };
 
+    const handleCancel = () => {
+        if (window.confirm("작성을 취소하시겠습니까?")) {
+            navigate("/");
+        }
+    };
+
     return (
-        <form className="container" onSubmit={handleSubmit}>
-            <h1 className="text-center">글쓰기</h1>
+        <div className="write-wrapper">
+            <div className="write-content">
+                <h2 className="title">글쓰기</h2>
+                <form id="Write-content" onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label htmlFor="title">제목</label>
+                        <input
+                            id="title"
+                            className="form-control"
+                            name="title"
+                            value={form.title}
+                            onChange={handleChange}
+                        />
+                    </div>
 
-            <div className="form-group">
-                <label>제목</label>
-                <input
-                    className="form-control"
-                    name="title"
-                    value={form.title}
-                    onChange={handleChange}
-                />
+                    <div className="form-group">
+                        <label htmlFor="name">작성자</label>
+                        <input
+                            id="name"
+                            className="form-control"
+                            name="name"
+                            value={form.name}
+                            onChange={handleChange}
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="content">내용</label>
+                        <textarea
+                            id="content"
+                            className="form-control"
+                            name="content"
+                            value={form.content}
+                            onChange={handleChange}
+                        />
+                    </div>
+
+                    <div className="button-container">
+                        <button type="button" className="btn-cancel" onClick={handleCancel}>
+                            취소
+                        </button>
+                        <button type="submit" className="btn-write">
+                            작성
+                        </button>
+                    </div>
+                </form>
             </div>
-
-            <div className="form-group">
-                <label>작성자</label>
-                <input
-                    className="form-control"
-                    name="name"
-                    value={form.name}
-                    onChange={handleChange}
-                />
-            </div>
-
-            <div className="form-group">
-                <label>내용</label>
-                <textarea
-                    className="form-control"
-                    name="content"
-                    value={form.content}
-                    onChange={handleChange}
-                />
-            </div>
-
-            <button className="btn-primary" type="submit">
-                글 작성
-            </button>
-        </form>
+        </div>
     );
 };
 
