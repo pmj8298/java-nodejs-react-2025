@@ -29,7 +29,7 @@ const Write = () => {
             const result = await response.text();
             if (result === "success") {
                 alert("글 작성 완료!");
-                navigate("/");
+                navigate("/board");
             } else {
                 alert("글 작성 실패: " + result);
             }
@@ -40,7 +40,7 @@ const Write = () => {
 
     const handleCancel = () => {
         if (window.confirm("작성을 취소하시겠습니까?")) {
-            navigate("/");
+            navigate("/board");
         }
     };
 

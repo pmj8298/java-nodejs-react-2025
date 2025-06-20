@@ -53,7 +53,7 @@ const Update = () => {
             const result = await res.text();
             if (result === "success") {
                 alert("글 수정 완료!");
-                navigate(`/?nowpage=${nowpage}`);
+                navigate(`/view?boardId=${boardId}?nowpage=${nowpage}`);
             } else {
                 alert("수정 실패: " + result);
             }
